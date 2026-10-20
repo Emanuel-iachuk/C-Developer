@@ -1,15 +1,11 @@
 #include <stdio.h>
 
-char nome[10];
-int idade;
-double altura;
-
 void exibirMensagem(const char* mensagem) {
     printf("%s", mensagem);
 }
 
 
-void dadosPessoais() {
+void dadosPessoais(const char* nome, int idade, double altura) {
     printf("\n--- Dados Pessoais ---\n");
     printf("Nome: %s\n", nome);
     printf("Idade: %d anos\n", idade);
@@ -18,6 +14,9 @@ void dadosPessoais() {
 }
 
 int main() {
+    char nome[50];
+    int idade;
+    double altura;
 
     exibirMensagem("Digite seu nome: ");
     scanf("%s", nome);
@@ -26,7 +25,7 @@ int main() {
     exibirMensagem("Digite sua altura: ");
     scanf("%lf", &altura);
 
-    dadosPessoais();
+    dadosPessoais(nome, idade, altura);
 
 
     return 0;
